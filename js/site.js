@@ -28,8 +28,9 @@ if(md){
   function draw(){
     md.querySelectorAll('.mtabs button').forEach(function(b){b.classList.toggle('on',b.dataset.c===cur)});
     var p=C.proxima, pm=p.partidos[cur]||{}, has=p.fecha&&pm.rival;
-    var nx='<div class="mk">Próximo partido · Fecha '+p.numero+'</div><div class="teams"><div class="t"><img src="logos/escudo.png" alt="">Argentino</div><div class="vs">VS</div><div class="t"><div class="rival">'+(has?esc(pm.rival.charAt(0)):'?')+'</div>'+(has?esc(pm.rival):'A confirmar')+'</div></div><div class="meta">'+(has?esc(pm.hora)+' · '+esc(pm.cancha):'Fixture por confirmar en la liga')+'</div>';
+    var nx=pm.libre?'<div class="mk">Próximo partido · Fecha '+p.numero+'</div><div class="teams"><div class="t"><img src="logos/escudo.png" alt="">Argentino</div></div><div class="meta">Fecha libre: descansan las piernas, no la garganta.</div>':'<div class="mk">Próximo partido · Fecha '+p.numero+'</div><div class="teams"><div class="t"><img src="logos/escudo.png" alt="">Argentino</div><div class="vs">VS</div><div class="t"><div class="rival">'+(has?esc(pm.rival.charAt(0)):'?')+'</div>'+(has?esc(pm.rival):'A confirmar')+'</div></div><div class="meta">'+(has?esc(pm.hora)+' · '+esc(pm.cancha):'Fixture por confirmar en la liga')+'</div>';
     var cd='<div class="mk">Falta</div>';
+    if(pm.libre){cd+='<div class="big">Libre</div><div class="meta">Esta fecha la categoría descansa. Vení a alentar a las otras.</div>';}else
     if(has){cd+='<div class="big" id="cd">—</div><div class="meta">Vení a alentar: el mate lo cebamos nosotros.</div>'}
     else{cd+='<div class="big">Sábado</div><div class="meta">Apenas la liga publique la fecha, la cargamos acá. Vení a alentar: el mate lo cebamos nosotros.</div>'}
     var lp=lastPlayed(cur), r=result(lp);
@@ -37,7 +38,7 @@ if(md){
     md.querySelector('.mgrid').innerHTML='<div class="mbox">'+nx+'</div><div class="mbox">'+cd+'</div><div class="mbox">'+rs+'</div>';
     if(has) tick();
   }
-  function tick(){var t=new Date(C.proxima.fecha)-new Date(),e=document.getElementById('cd');if(!e)return;if(t<0){e.textContent='¡Hoy!';return}var d=Math.floor(t/864e5),h=Math.floor(t%864e5/36e5),m=Math.floor(t%36e5/6e4);e.textContent=d+'d '+h+'h '+m+'m'}
+  function tick(){var t=new Date((C.proxima.partidos[cur]||{}).iso||C.proxima.fecha)-new Date(),e=document.getElementById('cd');if(!e)return;if(t<0){e.textContent='¡Hoy!';return}var d=Math.floor(t/864e5),h=Math.floor(t%864e5/36e5),m=Math.floor(t%36e5/6e4);e.textContent=d+'d '+h+'h '+m+'m'}
   md.querySelector('.mtabs').innerHTML=cats.map(function(c){return '<button data-c="'+c+'">'+c+'</button>'}).join('')+'<span class="lbl">Liga Chicureo Norte · Clausura</span>';
   md.querySelectorAll('.mtabs button').forEach(function(b){b.onclick=function(){cur=b.dataset.c;draw()}});
   draw(); setInterval(tick,30000);

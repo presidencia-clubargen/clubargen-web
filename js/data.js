@@ -13,12 +13,12 @@ window.CLUB = {
 
   /* Próxima fecha: fecha ISO con hora de Chile (-03:00). Si no hay datos, dejar fecha: "" */
   proxima: {
-    fecha: "",
-    numero: 9,
+    fecha: "2026-11-21T09:00:00-03:00",
+    numero: 10,
     partidos: {
-      "Senior": { rival: "", hora: "", cancha: "" },
-      "Súper Senior": { rival: "", hora: "", cancha: "" },
-      "Dorada": { rival: "", hora: "", cancha: "" }
+      "Senior": { libre: true },
+      "Súper Senior": { rival: "Miami Dogs", hora: "Sáb 21/11 · 10:30", cancha: "Futbolito 1", iso: "2026-11-21T10:30:00-03:00" },
+      "Dorada": { rival: "Wallala", hora: "Sáb 21/11 · 9:00", cancha: "Futbolito 2" }
     }
   },
 
@@ -32,7 +32,8 @@ window.CLUB = {
       {f:5, local:"Amandinos", visita:"Argentino", gl:0, gv:1},
       {f:6, local:"Viña San Pedro", visita:"Argentino", gl:3, gv:5},
       {f:7, local:"Pugas", visita:"Argentino", gl:2, gv:3},
-      {f:8, local:"Argentino", visita:"Gusanos", gl:1, gv:3}
+      {f:8, local:"Argentino", visita:"Gusanos", gl:1, gv:3},
+      {f:9, local:"Argentino", visita:"Ramón Valdés", gl:0, gv:1}
     ],
     "Súper Senior": [
       {f:1, local:"Diabólica", visita:"Argentino", gl:1, gv:1},
@@ -42,7 +43,8 @@ window.CLUB = {
       {f:5, local:"St. Withords", visita:"Argentino", gl:4, gv:4},
       {f:6, local:"Dako", visita:"Argentino", gl:1, gv:2},
       {f:7, local:"Argentino", visita:"Halcones", gl:3, gv:4},
-      {f:8, local:"Argentino", visita:"Wallala", gl:0, gv:2}
+      {f:8, local:"Argentino", visita:"Wallala", gl:0, gv:2},
+      {f:9, local:"Argentino", visita:"Maestros", gl:2, gv:3}
     ],
     "Dorada": [
       {f:1, local:"Argentino", visita:"Chilcano", gl:2, gv:2},
@@ -52,13 +54,14 @@ window.CLUB = {
       {f:5, local:"La Gloria D", visita:"Argentino", gl:11, gv:0},
       {f:6, local:"Academia", visita:"Argentino", gl:2, gv:5},
       {f:7, local:"Argentino", visita:"Palestino", gl:1, gv:10},
-      {f:8, local:"Chilcano", visita:"Argentino", gl:2, gv:0}
+      {f:8, local:"Chilcano", visita:"Argentino", gl:2, gv:0},
+      {f:9, local:"Liverpool D", visita:"Argentino", gl:2, gv:2}
     ]
   },
 
   equipos: {
     "Senior": { modalidad: "Fútbol 11", capitanes: ["Ramiro Corbascio","Ariel Páez","Facundo Sosa"],
-      plantel: ["Agustín Alberio","Ángel Guzmán","Ariel Páez Bergel","Carlos Otárola (Titi)","César Jorquera","Cristian Gálvez","David Andersen","Diego Moya","Ezequiel Penido","Facundo Sosa","Federico Jelen","Gonzalo Vargas","Javier Cornejo Gómez","Jehison Vargas","Joaquín Caro Norambuena","Jorge Páez Bergel","Juan Carrasco","Juan Fuente Alba","Juan Pablo Meza","Leandro Brito Ponce","Lucas Hervás","Mauricio Araya Abello","Mauro Contreras (Pancito)","Pablo Cortés","Patricio Fuentes","Ramiro Corbascio"] },
+      plantel: ["Agustín Alberio","Ángel Guzmán","Ariel Páez Bergel","Carlos Otárola (Titi)","César Jorquera","Cristian Gálvez","David Andersen","Diego Moya","Ezequiel Penido","Facundo Sosa","Federico Jelen","Gonzalo Vargas","Javier Cornejo Gómez","Jehison Vargas","Joaquín Caro Norambuena","Jorge Páez Bergel","Juan Carrasco","Juan Fuente Alba","Juan Pablo Meza","Leandro Brito Ponce","Lucas Hervás","Mauricio Araya Abello","Mauro Contreras (Pancito)","Pablo Cortés","Patricio Fuentes","Ramiro Corbascio","Rauny Pérez"] },
     "Súper Senior": { modalidad: "Fútbol 8", capitanes: ["Gonzalo de los Santos","Gustavo Sosa"],
       plantel: ["Agustín Lago","Carlos Montoya","Carlos Tapia Zapata","Demian Agostinelli","Diego Alliende","Eduardo Zaikoski","Fidel Di Tomaso","Francisco Ruiz-Esquide","Fuad Kattan","Gerson Morales","Gonzalo de los Santos","Gustavo Sosa","Ignacio Nattero","Jonatan Miranda","Juan Pablo Belderrain","Manuel Manquemilla","Mario Carriza","Maximiliano Zárate"] },
     "Dorada": { modalidad: "Fútbol 8", capitanes: ["Javier Sued","Diego Taborda","Víctor Paredes"],
@@ -67,10 +70,11 @@ window.CLUB = {
 
   /* Noticias: las que ya salieron en Instagram con ok de Fidel. La primera es la destacada. */
   noticias: [
-    { k:"El Club", t:"Nuestro rincón, ahora en la cancha", p:"Los planteles estrenaron la bandera con Pizzería Popular, nuestro sponsor principal.", img:"img/bandera-grupo.jpg", link:"https://www.instagram.com/clubargen/" },
+    { k:"Fiesta", t:"Tu marca, en la noche más importante del Club", p:"Fiesta de Fin de Año · 12/12 · Centro Parque. Apoyá al Club, que el Club te apoya a vos.", img:"img/sponsors-fiesta.jpg", link:"https://www.instagram.com/clubargen/p/Df22ssqhiL7/" },
+    { k:"Entrevistas", t:"Jonatan Miranda, Vicepresidente", p:"Detrás del Club hay gente. Esta es una.", img:"img/entrevista-jony.jpg", link:"https://www.instagram.com/clubargen/reel/DfqIkl3SV3_/" },
+    { k:"Fútbol", t:"Fecha 9: un punto de seis", img:"img/res-f9.jpg", link:"https://www.instagram.com/clubargen/p/DfzezebB-EW/" },
+    { k:"Socios", t:"Qué lindo verte de nuevo", p:"Los socios ya tienen su cupón de Pizzería Popular.", img:"img/cupones.jpg", link:"https://www.instagram.com/clubargen/p/Dfnjws8FsF7/" },
     { k:"Eventos", t:"Fiesta de fin de año: esta vez, en diciembre", img:"img/fiesta-anuncio.jpg", link:"https://www.instagram.com/clubargen/p/DfZp9HDFruE/" },
-    { k:"Socios", t:"Nuestro rincón, otra vez", p:"Volvió el 30% en Pizzería Popular para los socios del Club.", img:"img/socio-cupon2.jpg", link:"https://www.instagram.com/clubargen/p/DfYG7FIFtCH/" },
-    { k:"Comunidad", t:"10 años y el che siempre vigente", img:"img/che10.jpg", link:"https://www.instagram.com/clubargen/p/DffVcoqh_1_/" },
-    { k:"Club", t:"Camiseta 2026, presentada en sociedad", img:"img/dsc07779.jpg", link:"https://www.instagram.com/clubargen/" }
+    { k:"Comunidad", t:"10 años y el che siempre vigente", img:"img/che10.jpg", link:"https://www.instagram.com/clubargen/p/DffVcoqh_1_/" }
   ]
 };
